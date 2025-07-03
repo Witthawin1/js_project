@@ -1,0 +1,33 @@
+.title{
+    color: green;
+}
+
+/* components/NavBar.module.css */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  background-color: #333; /* ตัวอย่าง: สีพื้นหลังของ Navbar */
+}
+
+.title {
+  /* Style for your logo/title div */
+}
+
+.navLink {
+  color: white; /* สีเริ่มต้นของ Link */
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  transition: color 0.3s ease; /* เพิ่ม transition เพื่อให้เปลี่ยนสีนุ่มนวลขึ้น */
+}
+
+.navLink:hover {
+  color: #add8e6; /* สีเมื่อเอาเมาส์ไปชี้ */
+}
+
+.activeLink {
+  color: #f0c300; /* สีของ Link ที่ Active */
+  font-weight: bold;
+  border-bottom: 2px solid #f0c300; /* อาจจะเพิ่มเส้นใต้เพื่อเน้น */
+}
