@@ -1,4 +1,7 @@
 import Image from 'next/image'
+import styles from './product.module.css'
+import Link from 'next/link'
+
 export const metadata = {
   title: 'Products | Witthawin',
   keywords: 'witthawin,shopping,sell shirt',
@@ -12,20 +15,24 @@ export default async function ProductsPage() { // Changed to async function
   return (
     <>
       <h1>All products</h1>
+      <div className={styles.container}>
       {
         data.products.map((product) => (
             <div key={product.id}>
-                <h2>{product.title}</h2>
+              <Link href={'/products/'+product.id}>
+                <h2 className={styles.title}>{product.title}</h2>
                 <Image src={product.thumbnail}
                 width={300}
                 height={300}
                 alt={product.title}
                 ></Image>
-                <p>{product.price}</p>
+              </Link>
             </div>
         ))
       }
+      </div>
     </>
+
   );
 }
 

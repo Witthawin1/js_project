@@ -8,6 +8,9 @@ const nextConfig = {
         pathname: '/product-images/**',
       },
     ],
+    // handle internet image
+    // image size
+    unoptimized:true
   },
 };
 export default nextConfig;
