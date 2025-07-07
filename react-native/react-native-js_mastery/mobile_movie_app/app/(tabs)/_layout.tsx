@@ -70,9 +70,9 @@ const _Layout = () => {
         }}
       ></Tabs.Screen>
       <Tabs.Screen
-        name="profile"
+        name="search"
         options={{
-          title: "Profile",
+          title: "Search",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <>
@@ -102,9 +102,9 @@ const _Layout = () => {
         }}
       ></Tabs.Screen>
       <Tabs.Screen
-        name="search"
+        name="profile"
         options={{
-          title: "Search",
+          title: "Profile",
           headerShown: false,
           tabBarIcon: ({ focused }) => (
             <>
