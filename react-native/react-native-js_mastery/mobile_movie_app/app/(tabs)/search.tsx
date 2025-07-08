@@ -15,9 +15,10 @@ import { useRouter } from "expo-router";
 import useFetch from "@/services/useFetch";
 import { fetchMovies } from "@/services/api";
 import MovieCard from "@/components/MovieCard";
+import { updateSearchCount } from "@/services/appwrite";
 
 export default function Search() {
-  const [searchQuery , setSearchQuery] = useState('')
+  const [searchQuery , setSearchQuery] = useState("")
 
   const {
     data: movies,
@@ -37,16 +38,22 @@ export default function Search() {
     }
   }, []);
 
-    useEffect(() => {
+
+  useEffect(() => {
     const timeoutId = setTimeout(async () => {
         if (searchQuery.trim()) {
             await loadMovies();
-        }else{
+            if (movies?.length > 0 && movies?.[0]) {
+              updateSearchCount(searchQuery,movies[0])
+            }
+        }
+        else{
             reset()
         }
     },500)
     return () => clearTimeout(timeoutId)
   }, [searchQuery]);
+
 
   return (
     <View className="flex-1 bg-primary">
